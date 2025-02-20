@@ -72,7 +72,7 @@ RUN git clone --depth 1 https://github.com/houstonhaynes/Furnace.git \
 RUN pip install nteract_on_jupyter
 
 # Install lastest build from master branch of Microsoft.DotNet.Interactive
-RUN dotnet tool install -g Microsoft.dotnet-interactive --version 1.0355307
+RUN dotnet tool install -g Microsoft.dotnet-interactive --version 1.0.355307
 
 #latest stable from nuget.org
 #RUN dotnet tool install -g Microsoft.dotnet-interactive --add-source "https://api.nuget.org/v3/index.json"
