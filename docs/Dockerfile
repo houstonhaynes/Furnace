@@ -65,7 +65,7 @@ USER ${USER}
 
 # Clone and build Furnace-cpu bundle to get the latest TorchSharp and libtorch-cpu packages downloaded and cached by nuget within the Docker image
 # This the makes user experience faster when running #r "nuget: Furnace-cpu
-RUN git clone --depth 1 https://github.com/Furnace/Furnace.git \
+RUN git clone --depth 1 https://github.com/houstonhaynes/Furnace.git \
     && dotnet build Furnace/bundles/Furnace-cpu
 
 #Install nteract 
