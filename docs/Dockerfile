@@ -34,7 +34,7 @@ ENV \
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         libc6 \
-        libgcc1 \
+        libgcc-s1 \ 
         libgssapi-krb5-2 \
         libicu70 \
         libssl3 \
@@ -42,6 +42,7 @@ RUN apt-get update \
         zlib1g \
         curl \
         git \
+        ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
 # When updating the SDK version, the sha512 value a few lines down must also be updated.
