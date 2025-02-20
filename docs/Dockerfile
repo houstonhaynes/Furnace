@@ -46,9 +46,9 @@ RUN apt-get update \
 
 # When updating the SDK version, the sha512 value a few lines down must also be updated.
 # Install .NET SDK
-RUN curl -SL --output dotnet.tar.gz https://dotnetcli.azureedge.net/dotnet/Sdk/${DOTNET_SDK_VERSION}/dotnet-sdk-${DOTNET_SDK_VERSION}-linux-x64.tar.gz \
-    && echo "Downloading .NET SDK ${DOTNET_SDK_VERSION}..." \
-    && dotnet_sha512='01ed59f236184987405673d24940d55ce29d830e7dbbc19556fdc03893039e6046712de6f901dc9911047a0dee4fd15319b7e94f8a31df6b981fa35bd93d9838' \
+RUN curl -SL --output dotnet.tar.gz https://dotnetcli.azureedge.net/dotnet/Sdk/6.0.428/dotnet-sdk-6.0.428-linux-x64.tar.gz \
+    && echo "Downloading .NET SDK 6.0.428..." \
+    && dotnet_sha512='bb87b743f2aa78234f0caa193b809a63efc2e99b537b44a0c2d1c3f49e48a447c93f0a3d92a6e39aca17d519b0df2582123b1db65f97f8d0d75ccbe7aa5a1a84' \
     && echo "$dotnet_sha512 dotnet.tar.gz" | sha512sum -c - \
     && mkdir -p /usr/share/dotnet \
     && tar -ozxf dotnet.tar.gz -C /usr/share/dotnet \
