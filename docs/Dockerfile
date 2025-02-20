@@ -28,8 +28,7 @@ ENV \
     # Skip extraction of XML docs - generally not useful within an image/container - helps performance
     NUGET_XMLDOC_MODE=skip \
     # Opt out of telemetry until after we install jupyter when building the image, this prevents caching of machine id
-    DOTNET_INTERACTIVE_CLI_TELEMETRY_OPTOUT=true \
-    DOTNET_SDK_VERSION=5.0.202
+    DOTNET_INTERACTIVE_CLI_TELEMETRY_OPTOUT=true
 
 # Install .NET CLI dependencies
 RUN apt-get update \

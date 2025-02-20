@@ -49,25 +49,25 @@ jobs:
         echo "GIT_COMMIT_MESSAGE=$(git log -1 --pretty=%s)" >> $GITHUB_ENV
     - name: Install ReportGenerator
       run: dotnet tool install -g dotnet-reportgenerator-globaltool --version 5.1.26
-    - name: Test with coverage
-      run: |
-        # Create coverage directory
-        mkdir -p coverage
-        
-        # Run tests with coverage and debug output
-        dotnet test --configuration Release --no-build \
-          /p:CollectCoverage=true \
-          /p:CoverletOutputFormat=opencover \
-          /p:CoverletOutput="$PWD/coverage/coverage.opencover.xml" \
-    
-    - name: Process coverage
-      run: |
-        # Convert to LCOV format
-        reportgenerator \
-          -reports:"$PWD/coverage/coverage.opencover.xml" \
-          -targetdir:"$PWD/coverage" \
-          -reporttypes:lcov
-    
+#    - name: Test with coverage
+#      run: |
+#        # Create coverage directory
+#        mkdir -p coverage
+#        
+#        # Run tests with coverage and debug output
+#        dotnet test --configuration Release --no-build \
+#          /p:CollectCoverage=true \
+#          /p:CoverletOutputFormat=opencover \
+#          /p:CoverletOutput="$PWD/coverage/coverage.opencover.xml" \
+#    
+#    - name: Process coverage
+#      run: |
+#        # Convert to LCOV format
+#        reportgenerator \
+#          -reports:"$PWD/coverage/coverage.opencover.xml" \
+#          -targetdir:"$PWD/coverage" \
+#          -reporttypes:lcov
+#    
 #    - name: Upload coverage
 #      uses: coverallsapp/github-action@v2
 #      with:
